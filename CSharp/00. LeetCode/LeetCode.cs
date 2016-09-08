@@ -21,7 +21,8 @@ namespace LeetCode
 		public void RunTests<TArg, TResult>(TestSample<TArg, TArg, TResult>[] tests, Func<TArg, TResult> func)
 		{
 			foreach (var test in tests) {
-				test.Result = func(test.Arg1);
+				TResult result = func(test.Arg1);
+				test.SetResult(result);
 				Console.Out.WriteLine(test.ToString());
 			}
 		}
@@ -37,7 +38,8 @@ namespace LeetCode
 		public void RunTests<TArg1, TArg2, TResult>(TestSample<TArg1, TArg2, TResult>[] tests, Func<TArg1, TArg2, TResult> func)
 		{
 			foreach (var test in tests) {
-				test.Result = func(test.Arg1, test.Arg2);
+				TResult result = func(test.Arg1, test.Arg2);
+				test.SetResult(result);
 				Console.Out.WriteLine(test.ToString());
 			}
 		}
@@ -137,11 +139,7 @@ namespace LeetCode
 		/// <value>
 		/// The result.
 		/// </value>
-		public TResult Result {
-			get { return result; }
-			set { SetResult(result); }
-		}
-		private TResult result;
+		public TResult Result { get; private set; }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TestSample" /> class.
@@ -202,7 +200,7 @@ namespace LeetCode
 		/// <param name="result">The result.</param>
 		public void SetResult(TResult result)
 		{
-			this.result = result;
+			Result = result;
 
 			if (Expected != null) {
 				Status = AreEqual(result, Expected) ? TestStatus.Passed : TestStatus.Failed;
@@ -228,7 +226,7 @@ namespace LeetCode
 					ToString(Arg1), ToString(Arg2), ToString(Result), status);
 			} else {
 				return String.Format("{0} => {1}{2}",
-					ToString(Arg1), ToString(result), status);
+					ToString(Arg1), ToString(Result), status);
 			}
 		}
 
