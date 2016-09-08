@@ -18,7 +18,7 @@ namespace LeetCode
 		/// <typeparam name="TResult">The type of the result.</typeparam>
 		/// <param name="tests">The test samples.</param>
 		/// <param name="func">The test function.</param>
-		public void RunTests<TArg, TResult>(TestSample<TArg, TArg, TResult>[] tests, Func<TArg, TResult> func)
+		public void RunTests<TArg, TResult>(TestSample<TArg, Void, TResult>[] tests, Func<TArg, TResult> func)
 		{
 			foreach (var test in tests) {
 				TResult result = func(test.Arg1);
@@ -51,13 +51,13 @@ namespace LeetCode
 		/// <typeparam name="TResult">The type of the result.</typeparam>
 		/// <param name="tests">The test arguments.</param>
 		/// <param name="func">The test function.</param>
-		public void RunTests<TArg, TResult>(TArg[] tests, Func<TArg, TResult> func)
-		{
-			foreach (var test in tests) {
-				TResult result = func(test);
-				Console.Out.WriteLine("{0} => {1}");
-			}
-		}
+		//public void RunTests<TArg, TResult>(TArg[] tests, Func<TArg, TResult> func)
+		//{
+		//	foreach (var test in tests) {
+		//		TResult result = func(test);
+		//		Console.Out.WriteLine("{0} => {1}");
+		//	}
+		//}
 
 		/// <summary>
 		/// Runs the tests.
@@ -66,13 +66,13 @@ namespace LeetCode
 		/// <typeparam name="TResult">The type of the result.</typeparam>
 		/// <param name="tests">The pairs of test argument.</param>
 		/// <param name="func">The test function.</param>
-		public void RunTests<TArg, TResult>(TArg[] tests, Func<TArg, TArg, TResult> func)
-		{
-			for (int i = 1; i < tests.Length; i += 2) {
-				TResult result = func(tests[i - 1], tests[i]);
-				Console.Out.WriteLine("({0}, {1}) => {2}");
-			}
-		}
+		//public void RunTests<TArg, TResult>(TArg[] tests, Func<TArg, TArg, TResult> func)
+		//{
+		//	for (int i = 1; i < tests.Length; i += 2) {
+		//		TResult result = func(tests[i - 1], tests[i]);
+		//		Console.Out.WriteLine("({0}, {1}) => {2}");
+		//	}
+		//}
 	}
 
 	/// <summary>
@@ -84,6 +84,11 @@ namespace LeetCode
 		Passed,
 		Failed
 	}
+
+	/// <summary>
+	/// Placeholder for unused second argument
+	/// </summary>
+	public enum Void { @void };
 
 	/// <summary>
 	/// /
