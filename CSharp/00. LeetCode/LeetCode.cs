@@ -239,7 +239,7 @@ namespace LeetCode
 		/// </returns>
 		public virtual string ToString(object obj)
 		{
-			if (obj == null) return null;
+			if (obj == null) return "null";
 
 			if (obj is string) {
 				return String.Format("\"{0}\"", obj);
