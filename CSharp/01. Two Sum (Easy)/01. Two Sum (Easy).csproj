@@ -46,6 +46,7 @@
     <Compile Include="..\00. LeetCode\LeetCode.cs">
       <Link>LeetCode.cs</Link>
     </Compile>
+    <Compile Include="Solution.cs" />
     <Compile Include="TwoSum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

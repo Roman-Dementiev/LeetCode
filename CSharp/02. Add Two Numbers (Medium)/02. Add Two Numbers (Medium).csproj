@@ -48,6 +48,7 @@
     </Compile>
     <Compile Include="AddTwoNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solution.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -7,9 +7,34 @@ using System.Threading.Tasks;
 namespace LeetCode
 {
 	/// <summary>
+	/// Test status
+	/// </summary>
+	public enum TestStatus
+	{
+		None,
+		Passed,
+		Failed
+	}
+
+	/// <summary>
+	/// Placeholder for unused second argument
+	/// </summary>
+	public enum Void { @void };
+
+	/// <summary>
+	/// Definition for singly-linked list
+	/// </summary>
+	public class ListNode
+	{
+		public int val;
+		public ListNode next;
+		public ListNode(int x, ListNode n = null) { val = x; next = n; }
+	}
+
+	/// <summary>
 	/// class Solution
 	/// </summary>
-	public partial class Solution
+	public class TestProgram
 	{
 		/// <summary>
 		/// Runs the tests.
@@ -18,7 +43,7 @@ namespace LeetCode
 		/// <typeparam name="TResult">The type of the result.</typeparam>
 		/// <param name="tests">The test samples.</param>
 		/// <param name="func">The test function.</param>
-		public void RunTests<TArg, TResult>(TestSample<TArg, Void, TResult>[] tests, Func<TArg, TResult> func)
+		public static void RunTests<TArg, TResult>(TestSample<TArg, Void, TResult>[] tests, Func<TArg, TResult> func)
 		{
 			foreach (var test in tests) {
 				TResult result = func(test.Arg1);
@@ -35,7 +60,7 @@ namespace LeetCode
 		/// <typeparam name="TResult">The type of the result.</typeparam>
 		/// <param name="tests">The test samples.</param>
 		/// <param name="func">The test function.</param>
-		public void RunTests<TArg1, TArg2, TResult>(TestSample<TArg1, TArg2, TResult>[] tests, Func<TArg1, TArg2, TResult> func)
+		public static void RunTests<TArg1, TArg2, TResult>(TestSample<TArg1, TArg2, TResult>[] tests, Func<TArg1, TArg2, TResult> func)
 		{
 			foreach (var test in tests) {
 				TResult result = func(test.Arg1, test.Arg2);
@@ -44,51 +69,35 @@ namespace LeetCode
 			}
 		}
 
-		/// <summary>
-		/// Runs the tests.
-		/// </summary>
-		/// <typeparam name="TArg">The type of the argument.</typeparam>
-		/// <typeparam name="TResult">The type of the result.</typeparam>
-		/// <param name="tests">The test arguments.</param>
-		/// <param name="func">The test function.</param>
-		//public void RunTests<TArg, TResult>(TArg[] tests, Func<TArg, TResult> func)
-		//{
-		//	foreach (var test in tests) {
-		//		TResult result = func(test);
-		//		Console.Out.WriteLine("{0} => {1}");
-		//	}
-		//}
+		// <summary>
+		// </summary>
+		// <typeparam name = "TArg" > The type of the argument.</typeparam>
+		// <typeparam name = "TResult" > The type of the result.</typeparam>
+		// <param name = "tests" > The test arguments.</param>
+		// <param name = "func" > The test function.</param>
+		public static void RunTests<TArg, TResult>(TArg[] tests, Func<TArg, TResult> func)
+		{
+			foreach (var test in tests) {
+				TResult result = func(test);
+				Console.Out.WriteLine("{0} => {1}");
+			}
+		}
 
-		/// <summary>
-		/// Runs the tests.
-		/// </summary>
-		/// <typeparam name="TArg">The type of the arguments.</typeparam>
-		/// <typeparam name="TResult">The type of the result.</typeparam>
-		/// <param name="tests">The pairs of test argument.</param>
-		/// <param name="func">The test function.</param>
-		//public void RunTests<TArg, TResult>(TArg[] tests, Func<TArg, TArg, TResult> func)
-		//{
-		//	for (int i = 1; i < tests.Length; i += 2) {
-		//		TResult result = func(tests[i - 1], tests[i]);
-		//		Console.Out.WriteLine("({0}, {1}) => {2}");
-		//	}
-		//}
+		// <summary>
+		// Runs the tests.
+		// </summary>
+		// <typeparam name = "TArg" > The type of the arguments.</typeparam>
+		// <typeparam name = "TResult" > The type of the result.</typeparam>
+		// <param name = "tests" > The pairs of test argument.</param>
+		// <param name = "func" > The test function.</param>
+		public void RunTests<TArg, TResult>(TArg[] tests, Func<TArg, TArg, TResult> func)
+		{
+			for (int i = 1; i < tests.Length; i += 2) {
+				TResult result = func(tests[i - 1], tests[i]);
+				Console.Out.WriteLine("({0}, {1}) => {2}");
+			}
+		}
 	}
-
-	/// <summary>
-	/// Test status
-	/// </summary>
-	public enum TestStatus
-	{
-		None,
-		Passed,
-		Failed
-	}
-
-	/// <summary>
-	/// Placeholder for unused second argument
-	/// </summary>
-	public enum Void { @void };
 
 	/// <summary>
 	/// /
@@ -128,7 +137,7 @@ namespace LeetCode
 		/// <value>
 		/// The expected.
 		/// </value>
-		public TResult Expected { get; }
+		public object Expected { get; }
 
 		/// <summary>
 		/// Gets the test status.
@@ -153,7 +162,7 @@ namespace LeetCode
 		/// <param name="arg1">The first argument.</param>
 		/// <param name="arg2">The second argument.</param>
 		/// <param name="expected">The expected result.</param>
-		protected TestSample(int nArgs, TArg1 arg1, TArg2 arg2, TResult expected)
+		protected TestSample(int nArgs, TArg1 arg1, TArg2 arg2, object expected)
 		{
 			NumArgs = nArgs;
 			Arg1 = arg1;
@@ -168,7 +177,7 @@ namespace LeetCode
 		/// </summary>
 		/// <param name="arg">The argument.</param>
 		public TestSample(TArg1 arg) :
-					this(1, arg, default(TArg2), default(TResult))
+			this(1, arg, default(TArg2), null)
 		{ }
 
 		/// <summary>
@@ -177,7 +186,7 @@ namespace LeetCode
 		/// <param name="arg1">The first argument.</param>
 		/// <param name="arg2">The second argument.</param>
 		public TestSample(TArg1 arg1, TArg2 arg2) :
-					this(2, arg1, arg2, default(TResult))
+			this(2, arg1, arg2, null)
 		{ }
 
 		/// <summary>
@@ -185,8 +194,8 @@ namespace LeetCode
 		/// </summary>
 		/// <param name="arg">The argument.</param>
 		/// <param name="expected">The expected result value.</param>
-		public TestSample(TArg1 arg, TResult expected) :
-					this(1, arg, default(TArg2), expected)
+		public TestSample(TArg1 arg, object expected) :
+			this(1, arg, default(TArg2), expected)
 		{ }
 
 		/// <summary>
@@ -236,13 +245,38 @@ namespace LeetCode
 		}
 
 		/// <summary>
+		/// Returns a <see cref="System.String" /> that represents the range of array.
+		/// </summary>
+		/// <param name="array">The array.</param>
+		/// <param name="start">The range start.</param>
+		/// <param name="count">The range length.</param>
+		/// <returns>
+		/// A <see cref="System.String" /> that represents this instance.
+		/// </returns>
+		public static string ToString(Array array, int start, int length)
+		{
+			if (length == 0)
+				return "[]";
+
+			var sb = new StringBuilder("[");
+			sb.Append(ToString(array.GetValue(start)));
+			for (int i = 1; i < length; i++) {
+				sb.Append(", ");
+				sb.Append(ToString(array.GetValue(start+i)));
+			}
+			sb.Append("]");
+			return sb.ToString();
+
+		}
+
+		/// <summary>
 		/// Returns a <see cref="System.String" /> that represents the argument or result.
 		/// </summary>
 		/// <param name="obj">The object.</param>
 		/// <returns>
 		/// A <see cref="System.String" /> that represents the object.
 		/// </returns>
-		public virtual string ToString(object obj)
+		public static string ToString(object obj)
 		{
 			if (obj == null) return "null";
 
@@ -252,16 +286,7 @@ namespace LeetCode
 
 			if (obj is Array) {
 				var array = obj as Array;
-				if (array.Length == 0)
-					return "[]";
-				var sb = new StringBuilder("[");
-				sb.Append(ToString(array.GetValue(0)));
-				for (int i = 1; i < array.Length; i++) {
-					sb.Append(", ");
-					sb.Append(ToString(array.GetValue(i)));
-				}
-				sb.Append("]");
-				return sb.ToString();
+				return ToString(array, 0, array.Length);
 			}
 
 			if (obj is ListNode) {
@@ -325,14 +350,4 @@ namespace LeetCode
 		}
 	}
 
-
-	/*
-	 * Definition for singly-linked list.
-	 */
-	public class ListNode
-	{
-		public int val;
-		public ListNode next;
-		public ListNode(int x, ListNode n = null) { val = x; next = n;  }
-	}
 }
