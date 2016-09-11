@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Add Two Numbers (Medium
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Longest Substring Without Repeating Characters (Medium)", "03. Longest Substring Without Repeating Characters (Medium)\03. Longest Substring Without Repeating Characters (Medium).csproj", "{CC5A1035-4858-4143-8013-445DA597DCAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Median of Two Sorted Arrays (Hard)", "04. Median of Two Sorted Arrays (Hard)\04. Median of Two Sorted Arrays (Hard).csproj", "{171DC681-1E1C-47EF-9F83-E98A54BDE523}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CC5A1035-4858-4143-8013-445DA597DCAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC5A1035-4858-4143-8013-445DA597DCAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC5A1035-4858-4143-8013-445DA597DCAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171DC681-1E1C-47EF-9F83-E98A54BDE523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171DC681-1E1C-47EF-9F83-E98A54BDE523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171DC681-1E1C-47EF-9F83-E98A54BDE523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171DC681-1E1C-47EF-9F83-E98A54BDE523}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
