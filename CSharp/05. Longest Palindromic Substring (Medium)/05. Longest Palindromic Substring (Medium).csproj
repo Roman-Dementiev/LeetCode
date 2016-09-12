@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CDB89042-851F-4BB2-A79E-7844315C9AA6}</ProjectGuid>
+    <ProjectGuid>{75E76639-159F-4746-BA61-FE3B12FF42AC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01.Two_Sum__Easy_</RootNamespace>
-    <AssemblyName>_01.Two_Sum__Easy_</AssemblyName>
+    <RootNamespace>_05.Longest_Palindromic_Substring__Medium_</RootNamespace>
+    <AssemblyName>_05.Longest_Palindromic_Substring__Medium_</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,9 +46,7 @@
     <Compile Include="..\00. LeetCode\LeetCode.cs">
       <Link>LeetCode.cs</Link>
     </Compile>
-    <Compile Include="Solution1.cs" />
-    <Compile Include="Solution2.cs" />
-    <Compile Include="TwoSum.cs" />
+    <Compile Include="LongestPalindromeSubstring.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
