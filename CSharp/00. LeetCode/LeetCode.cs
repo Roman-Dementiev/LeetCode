@@ -100,7 +100,7 @@ namespace LeetCode
 	}
 
 	/// <summary>
-	/// /
+	/// class TestSample
 	/// </summary>
 	/// <typeparam name="TArg1">The type of the 1st argument.</typeparam>
 	/// <typeparam name="TArg2">The type of the optional 2nd argument.</typeparam>
