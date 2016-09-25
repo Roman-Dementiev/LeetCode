@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="TestTypes.h" />
+    <ClInclude Include="TestSamples.h" />
+    <ClInclude Include="RandomSamples.h" />
+    <ClInclude Include="Printout.h" />
+    <ClInclude Include="LeetCode.h" />
+    <ClInclude Include="TestProgram.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LeetCode.cpp" />
+    <ClCompile Include="TestProgram.cpp" />
+    <ClCompile Include="TestSamples.cpp" />
+    <ClCompile Include="RandomSamples.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>
