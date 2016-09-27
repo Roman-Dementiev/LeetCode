@@ -160,16 +160,16 @@ For each character of the string *S*[*i*] try to build palindrome around that ch
 * * *
 # Summary
 
-  N | Problem     | Difficulty | Solution                                  |  C++   |  C#    | Java
---- | ----------- | ---------- | ----------------------------------------- | ------ | ------ | -----
-1   | Two Sum     | Easy       | 1) Brute Force: *O*(N^2^)                 |  486ms |  615ms |
-  . |             |            | 2) Hash Table: time *O*(N), space *O*(N)  |   16ms |  412ms |
+  N | Problem                                         | Diff.  | Solution/Comlexyty                       |  C++   |  C#    | Java
+--- | ----------------------------------------------- | ------ | ---------------------------------------- | ------ | ------ | -----
+  1 | Two Sum                                         | Easy   | 1) Brute Force: *O*(N^2^)                |  486ms |  615ms |
+    |                                                 |        | 2) Hash Table: time *O*(N), space *O*(N) |   16ms |  412ms |
+  2 | Add Two Numbers                                 | Medium | *O*(max(N1,N2))                          |   42ms |  185ms |
+2.1 | Followup: Add Two Numbers Stored                | Medium | *O*(max(N1,N2))                          |        |        | 
+    | in Non-Reversed Order
 
 
-
-2 | Add Two Numbers | Medium | *O*(max(N1,N2)) | 42ms | 185ms |
-2.1 | Followup: Add Two Numbers Stored in Non-Reversed Order | Medium | *O*(max(N1,N2))
-3 | Longest Substring Without Repeating Characters | Medium | 0) Brute Force: *O*(N^3^) | 599ms | Time Limit | |
+  3 | Longest Substring Without Repeating Characters  | Medium | 0) Brute Force: *O*(N^3^) | 599ms | Time Limit | |
 . | | | 1) Brute Force with HashSet: *O*(N^2^) | 32 ms | Time Limit |
 . | | | 2) Sliding Window: *O*(N) | 12ms | 119ms | |
 4 | Median of Two Sorted Arrays | Hard | 1) "Merge" method | 48ms | 196ms
