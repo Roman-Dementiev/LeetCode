@@ -8,7 +8,7 @@
 #define Solution Solution2
 
 
-class Solution2
+class Solution
 {
 public:
 	double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
@@ -23,9 +23,9 @@ public:
 		else {
 			int n = nums1.size() + nums2.size();
 			int k = n / 2;
-			median = FindKth(k, nums1, 0, nums1.size(), nums2, 0, nums2.size());
+			median = FindKth(k, nums1.data(), nums1.size(), nums2.data(), nums2.size());
 			if (n % 2 == 0) {
-				median += FindKth(k-1, nums1, 0, nums1.size(), nums2, 0, nums2.size());
+				median += FindKth(k-1, nums1.data(), nums1.size(), nums2.data(), nums2.size());
 				median /= 2;
 			}
 		}
@@ -46,6 +46,41 @@ public:
 		return median;
 	}
 
+	int FindKth(int k, const int* nums1, int count1, const int* nums2, int count2)
+	{
+		if (count1 == 0) {
+			return nums2[k];
+		}
+		if (count2 == 0) {
+			return nums1[k];
+		}
+		if (k == 0) {
+			return min(*nums1, *nums2);
+		}
+
+		int k1 = count1 / 2;
+		int k2 = count2 / 2;
+		if (k1 == 0 && k2 == 0) { // k == count1 == count2 == 1
+			return max(nums1[k1], nums2[k2]);
+		}
+
+		if (nums1[k1] < nums2[k2]) {
+			if (k <= k1 + k2) {
+				return FindKth(k, nums1, count1, nums2, k2);
+			} else {
+				return FindKth(k-k1-1, nums1+k1+1, count1-k1-1, nums2, count2);
+			}
+		}
+		else {
+			if (k <= k1 + k2) {
+				return FindKth(k, nums1, k1, nums2, count2);
+			} else {
+				return FindKth(k-k2-1, nums1, count1, nums2+k2+1, count2-k2-1);
+			}
+		}
+	}
+
+	/*
 	int FindKth(int k,
 		const vector<int>& nums1, int start1, int count1,
 		const vector<int>& nums2, int start2, int count2)
@@ -84,4 +119,5 @@ public:
 			}
 		}
 	}
+	*/
 };
