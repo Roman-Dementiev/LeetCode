@@ -16,7 +16,7 @@ namespace LeetCode
 				new TestSample(null, 0)
 			};
 
-			var sol = new Solution();
+			var sol = new Solution0();
 			RunTests<string,int>(tests, sol.LengthOfLongestSubstring);
 		}
 	}

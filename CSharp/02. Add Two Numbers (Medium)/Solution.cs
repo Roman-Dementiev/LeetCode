@@ -4,19 +4,6 @@ namespace LeetCode
 {
 	public class Solution
 	{
-		public ListNode AddSumNode(ListNode last, int val1, int val2, ref int carry)
-		{
-			int sum = val1 + val2 + carry;
-			if (sum >= 10) {
-				sum -= 10;
-				carry = 1;
-			} else {
-				carry = 0;
-			}
-			last.next = new ListNode(sum);
-			return last.next;
-		}
-
 		public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
 		{
 			int carry = 0;
@@ -42,5 +29,19 @@ namespace LeetCode
 
 			return dummy.next;
 		}
+
+		public ListNode AddSumNode(ListNode last, int val1, int val2, ref int carry)
+		{
+			int sum = val1 + val2 + carry;
+			if (sum >= 10) {
+				sum -= 10;
+				carry = 1;
+			} else {
+				carry = 0;
+			}
+			last.next = new ListNode(sum);
+			return last.next;
+		}
+
 	}
 }

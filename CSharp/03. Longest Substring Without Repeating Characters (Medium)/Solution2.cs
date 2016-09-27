@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace LeetCode
 {
-	public class Solution
+	public class Solution2
 	{
 		public int LengthOfLongestSubstring(string s)
 		{
 			if (String.IsNullOrEmpty(s))
 				return 0;
 
-			int maxStart = 0, curStart = 0;
+			int /*maxStart = 0,*/ curStart = 0;
 			int maxLength = 1, curLength = 1;
 			var curChars = new Dictionary<char, int>();
 			curChars.Add(s[0], 0);
@@ -19,7 +19,7 @@ namespace LeetCode
 				char ch = s[next];
 				if (curChars.ContainsKey(ch)) {
 					if (curLength > maxLength) {
-						maxStart = curStart;
+						//maxStart = curStart;
 						maxLength = curLength;
 					}
 					int newStart = curChars[ch] + 1;
@@ -33,7 +33,7 @@ namespace LeetCode
 				curLength++;
 			}
 			if (curLength > maxLength) {
-				maxStart = curStart;
+				//maxStart = curStart;
 				maxLength = curLength;
 			}
 

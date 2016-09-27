@@ -10,25 +10,27 @@
 class Solution
 {
 public:
-	int lengthOfLongestSubstring(string s)
+	int lengthOfLongestSubstring(string str)
 	{
-		int length = s.length();
+		int length = str.length();
 		if (length == 0)
 			return 0;
 
 //		int maxStart = 0;
 		int maxLength = 1;
-		for (int start = 0; start < length-1; start++) {
-			unordered_set<char> chars;
-			chars.insert(s[start]);
+		for (int start = length-2; start >= 0; start--) {
 			int end;
 			for (end = start+1; end < length; end++) {
-				char ch = s[end];
-				if (chars.find(ch) == chars.end()) {
-					chars.insert(ch);
-				} else {
-					break;
+				char ch = str[end];
+				bool repeating = false;
+				for (int i = start; i < end; i++) {
+					if (str[i] == ch) {
+						repeating = true;
+						break;
+					}
 				}
+				if (repeating)
+					break;
 			}
 			int len = end - start;
 			if (len > maxLength) {
@@ -38,4 +40,5 @@ public:
 		}
 		return maxLength;
 	}
+
 };

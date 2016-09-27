@@ -2,8 +2,11 @@
 #include "LeetCode.h"
 #include "Solution0.h"
 #include "Solution1.h"
+#include "Solution2.h"
 
-#define VerifySol Solution0
+#undef Solution
+#define Solution Solution1
+#define VerifySol Solution2
 
 using TestSample = LeetCode::TestSample<int, string>;
 using TestSamples = LeetCode::TestSamples<TestSample>;
@@ -14,7 +17,9 @@ class RandomSamples : public LeetCode::RandomSamples<TestSample>
 {
 	int maxLength;
 	vector<string> strings;
+#ifdef VerifySol
 	VerifySol verifySol;
+#endif
 public:
 	RandomSamples(int maxLength) : maxLength(maxLength) {}
 
@@ -40,8 +45,12 @@ public:
 			current = 0;
 
 		string str = strings[current++];
+#ifdef VerifySol
 		int result = verifySol.lengthOfLongestSubstring(str);
 		return new TestSample(move(str), move(result));
+#else
+		return new TestSample(move(str));
+#endif
 	}
 };
 
