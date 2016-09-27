@@ -19,14 +19,14 @@ return [0, 1].
 ### Solution 1: Brute Force [Accepted]
 Loop through all pairs of elements and check if the sum equals *target*.
 
-**Time complexity** : *O*(*N*^2^​​ ).
+**Time complexity** : *O*(*N*²).
 **Space compexity**: *O*(1)
 **Execution time**: C++  486ms, C# 615ms
 
 ### Solution 2: Hash Table [Accepted]
 Pass through elements of the array storing putting indices of values into hash table and checking if hash table already contains a value such that it's sum with current element equals **target**.
 
-**Time complexity** : *O*(*N*^2^​​ )
+**Time complexity** : *O*(*N*²)
 **Space compexity**: *O*(1)
 **Execution time**: C++  486ms, C# 615ms
 
@@ -50,7 +50,7 @@ Pass through list calculating sum digit by digit and keeping track of carry flag
 ## 2.1 Followup: Add Two Numbers Stored in Non-Reversed Order
 ### Solution
 Invert both lists in first pass and then calculate sum as above (optionally inverting lists back).
- **Time complexity** :Time complexity : *O*(2*max(*N1*, *N2*))
+ **Time complexity** :Time complexity : *O*(max(*N1*, *N2*))
 **Space compexity**: *O*(1)
 **Execution time**: -
 
@@ -72,7 +72,7 @@ Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer 
 ### Solution 0: Brute Force [Time Limit Exceeded (C++ accepted, surprisingly)]
 Check all substrings.
 
-**Time complexity** : *O*(N^3^​​).
+**Time complexity** : *O*(N³).
 **Space compexity**: *O*(1).
 **Execution time**: C++ 599ms, C# Time Limit Exceeded
 
@@ -80,7 +80,7 @@ Check all substrings.
 Store scanned substring characters in hash set so we can quickly check if next character is repeating.
 *Note*: If set of characters is small (for example, letters only) we can use array of boolean instead of hash set.
 
-**Time complexity** : *O*(*N*^2^​​ ).
+**Time complexity** : *O*(*N*²).
 **Space compexity**: *O*(k), where k is number of acceptable character.
 **Execution time**: C++ 32ms, C# Time Limit Exceeded
 
@@ -136,7 +136,7 @@ Given a string *S*, find the longest palindromic substring in *S*. You may assum
 ### Solution 0: Brute Force [Accepted]
 Check all substrings.
 
-**Time complexity** : *O*(N^3^​​).
+**Time complexity** : *O*(N³).
 **Space compexity**: *O*(1).
 **Execution time**: C++ 576ms, C# 372ms
 
@@ -145,14 +145,14 @@ Build table *DP*[*N*, *N*] of boolean values where *DP*[*i*, *j*] is *true* when
 First initialize the table for substring of length 1 (*DP*[*i*, *i*] = *true*) and length 2 (*DP*[*i*,*i*+1] = *true*, when *S*[*i*] = *S*[*i*+1]).
 Then fill table for lengths 3 to N using formula: *DP*[*i*, *j*] is *true* when *DP*[*i*+1,*j*-1] is *true* and *S*[*i*] = *S*[*j*].
 
-**Time complexity** : *O*(N^2^​​).
-**Space compexity**: *O*(N^2^).
+**Time complexity** : *O*(N²).
+**Space compexity**: *O*(N²).
 **Execution time**: C++ Memory Limit Exceeded, C# 239ms
 
 ### Solution 2: Expand palindrome from center [Accepted]
 For each character of the string *S*[*i*] try to build palindrome around that character and around *S*[*i*..*i*+1] if *S*[*i*] = *S*[*i*+1]
 
-**Time complexity** : *O*(N^2^​​).
+**Time complexity** : *O*(N²).
 **Space compexity**: *O*(1).
 **Execution time**: C++ 59ms, C# 129ms
 
@@ -162,8 +162,8 @@ For each character of the string *S*[*i*] try to build palindrome around that ch
 
   N | Problem                                         | Diff.  | Solution/Comlexyty                           |  C++   |  C#    | Java
 --- | ----------------------------------------------- | ------ | -------------------------------------------- | ------ | ------ | -----
-  1 | Two Sum                                         | Easy   | 1) Brute Force: *O*(*N*²)                    |  486*ms* |  615*ms* |
-    |                                                 |        | 2) Hash Table: time *O*(*N*), space *O*(*N*) |   16*ms* |  412*ms* |
+  1 | Two Sum                                         | Easy   | 1) Brute Force: *O*(*N*²)                    |  486ms |  615ms |
+    |                                                 |        | 2) Hash Table: time *O*(*N*), space *O*(*N*) |   16ms |  412ms |
   2 | Add Two Numbers                                 | Medium | *O*(max(*N1*,*N2*))                          |   42ms |  185ms |
 2.1 | Followup: Add Two Numbers Stored in Non-Reversed Order | Medium | *O*(max(*N1*,*N2*))                   |        |        |
   3 | Longest Substring Without Repeating Characters  | Medium | 0) Brute Force: *O*(*N*³)                    |  599ms | Time Limit |
