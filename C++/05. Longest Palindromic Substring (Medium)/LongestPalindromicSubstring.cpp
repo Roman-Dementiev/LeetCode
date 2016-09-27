@@ -4,8 +4,8 @@
 #include "Solution2.h"
 
 #undef Solution
-#define Solution Solution2
-#define VerifySol Solution0
+#define Solution Solution0
+//#define VerifySol Solution0
 
 using TestSample = LeetCode::TestSample<string, string>;
 using TestResult = TestSample::Result_t;
@@ -15,15 +15,21 @@ using TestProgram = LeetCode::TestProgram<TestSample, TestResult>;
 
 class RandomSamples : public LeetCode::RandomStringSamples<TestSample>
 {
+#ifdef VerifySol
 	VerifySol verify;
+#endif
 	vector<string> strings;
 public:
 	RandomSamples(int maxLength) : RandomStringSamples(maxLength) {}
 
 	virtual TestSample* GetSample(string&& str) override
 	{
+#ifdef VerifySol
 		string result = verify.longestPalindrome(str);
 		return new TestSample(forward<string>(str), move(result));
+#else
+		return new TestSample(forward<string>(str));
+#endif
 	}
 };
 

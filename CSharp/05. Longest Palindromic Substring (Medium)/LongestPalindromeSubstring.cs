@@ -19,7 +19,7 @@ namespace LeetCode
 				new TestSample(null)
 			};
 
-			var sol = new Solution1();
+			var sol = new Solution0();
 			RunTests(tests, sol.LongestPalindrome);
 		}
 	}

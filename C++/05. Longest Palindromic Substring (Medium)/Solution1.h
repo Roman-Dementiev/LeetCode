@@ -43,6 +43,11 @@ public:
 			}
 		}
 
+		for (int i = 0; i < n; i++) {
+			delete[] dp[i];
+		}
+		delete[] dp;
+
 		return str.substr(longestStart, longestLength);
 	}
 };

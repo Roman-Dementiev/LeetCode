@@ -1,38 +1,43 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace LeetCode
 {
 	class Solution1
 	{
-		public void ExpandPalindrome(string str, int l, int r, ref int longetsStart, ref int longestLength)
-		{
-			Debug.Assert(l >= 0 && l <= r && r < str.Length && str[l] == str[r]);
-
-			do {
-				l--;
-				r++;
-			}
-			while (l >= 0 && r < str.Length && str[l] == str[r]);
-
-			int len = r - l - 1;
-			if (longestLength < len) {
-				longestLength = len;
-				longetsStart = l + 1;
-			}
-		}
+		int longestStart;
+		int longestLength;
+		bool[,] dp;
 
 		public string LongestPalindrome(string str)
 		{
 			if (String.IsNullOrEmpty(str))
 				return String.Empty;
 
-			int longestStart = 0;
-			int longestLength = 1;
-			for (int i = 1; i < str.Length; i++) {
-				ExpandPalindrome(str, i, i, ref longestStart, ref longestLength);
-				if (str[i] == str[i - 1]) {
-					ExpandPalindrome(str, i - 1, i, ref longestStart, ref longestLength);
+
+			longestStart = 0;
+			longestLength = 1;
+
+			int n = str.Length;
+			bool[,] dp = new bool[n, n];
+			dp[0, 0] = true;
+			for (int i = n-2; i >= 0; i--) {
+				dp[i, i] = true;
+				if (str[i] == str[i+1]) {
+					dp[i, i+1]= true;
+					longestStart = i;
+					longestLength = 2;
+				}
+			}
+
+			for (int len = 3; len <= n; len++) {
+				for (int i = 0, j = len-1; j < n; i++, j++) {
+					if (dp[i+1, j-1] && str[i]==str[j]) {
+						dp[i, j] = true;
+						if (len > longestLength) {
+							longestStart = i;
+							longestLength = len;
+						}
+					}
 				}
 			}
 
