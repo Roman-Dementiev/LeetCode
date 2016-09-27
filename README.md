@@ -52,7 +52,7 @@ Pass through list calculating sum digit by digit and keeping track of carry flag
 ### Solution
 Invert both lists in first pass and then calculate sum as above (optionally inverting lists back).
 
- **Time complexity** :Time complexity : *O*(max(*N1*, *N2*))
+ **Time complexity**: *O*(max(*N1*, *N2*))
 **Space compexity**: *O*(1)
 **Execution time**: -
 
