@@ -162,16 +162,16 @@ For each character of the string *S*[*i*] try to build palindrome around that ch
 
   N | Problem                                         | Diff.  | Solution/Comlexyty                       |  C++   |  C#    | Java
 --- | ----------------------------------------------- | ------ | ---------------------------------------- | ------ | ------ | -----
-  1 | Two Sum                                         | Easy   | 1) Brute Force: *O*(N^2^)                |  486ms |  615ms |
+  1 | Two Sum                                         | Easy   | 1) Brute Force: *O*(N²)                  |  486ms |  615ms |
     |                                                 |        | 2) Hash Table: time *O*(N), space *O*(N) |   16ms |  412ms |
   2 | Add Two Numbers                                 | Medium | *O*(max(N1,N2))                          |   42ms |  185ms |
 2.1 | Followup: Add Two Numbers Stored in Non-Reversed Order | Medium | *O*(max(N1,N2))                   |        |        |
-  3 | Longest Substring Without Repeating Characters  | Medium | 0) Brute Force: *O*(N^3^)                |  599ms | Time Limit |
-    |                                                 |        | 1) Brute Force with HashSet: *O*(N^2^)   |  32 ms | Time Limit |
+  3 | Longest Substring Without Repeating Characters  | Medium | 0) Brute Force: *O*(N³)                  |  599ms | Time Limit |
+    |                                                 |        | 1) Brute Force with HashSet: *O*(N²)     |  32 ms | Time Limit |
     |                                                 |        | 2) Sliding Window: *O*(N)                |   12ms |  119ms |
   4 | Median of Two Sorted Arrays                     | Hard   | 1) "Merge" method                        |   48ms |  196ms |
     |                                                 |        | 2) Binary search for *k*-th element      |   32ms |  189ms |
   5 | Longest Palindromic Substring                   | Medium | 0) Brute Force: *O*(N^3^)                |  576ms |  372ms |
-    |                                                 |        | 1) Dynamic programming: time *O*(N^2^), space *O*(N^2^) | Memory Limit | 239ms |
-    |                                                 |        | 2) Expand palindrome from cenetr: time *O*(N^2^), space *O*(1) | 59ms | 129ms
+    |                                                 |        | 1) Dynamic programming: time *O*(N²), space *O*(N²) | Memory Limit | 239ms |
+    |                                                 |        | 2) Expand palindrome from center: time *O*(N²), space *O*(1) | 59ms | 129ms²
 
