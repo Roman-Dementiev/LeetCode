@@ -43,6 +43,7 @@ Output: 7 -> 0 -> 8
 
 ### Solution [Accepted]
 Pass through list calculating sum digit by digit and keeping track of carry flag.
+
  **Time complexity** :Time complexity : *O*(max(*N1*, *N2*))
 **Space compexity**: *O*(1)
 **Execution time**: C++ 42ms, C# 185ms
@@ -50,6 +51,7 @@ Pass through list calculating sum digit by digit and keeping track of carry flag
 ## 2.1 Followup: Add Two Numbers Stored in Non-Reversed Order
 ### Solution
 Invert both lists in first pass and then calculate sum as above (optionally inverting lists back).
+
  **Time complexity** :Time complexity : *O*(max(*N1*, *N2*))
 **Space compexity**: *O*(1)
 **Execution time**: -
