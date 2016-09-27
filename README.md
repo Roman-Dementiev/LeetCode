@@ -167,7 +167,7 @@ For each character of the string *S*[*i*] try to build palindrome around that ch
 * * *
 # Summary
 
-  N | Problem                                         | Diff.  | Solution/Comlexyty                           |  C++   |  C#    | Java
+  N | Problem                                         | Difficulty  | Solution/Comlexyty                           |  C++   |  C#    | Java
 --- | ----------------------------------------------- | ------ | -------------------------------------------- | ------ | ------ | -----
   1 | Two Sum                                         | Easy   | 1) Brute Force: *O*(*N*²)                    |  486ms |  615ms |
     |                                                 |        | 2) Hash Table: time *O*(*N*), space *O*(*N*) |   16ms |  412ms |
@@ -180,5 +180,5 @@ For each character of the string *S*[*i*] try to build palindrome around that ch
     |                                                 |        | 2) Binary search for *k*-th element: *O*(log *N*) |   32ms |  189ms |
   5 | Longest Palindromic Substring                   | Medium | 0) Brute Force: *O*(*N*³)                    |  576ms |  372ms |
     |                                                 |        | 1) Dynamic programming: time *O*(*N*²), space *O*(*N*²) | Memory Limit | 239ms |
-    |                                                 |        | 2) Expand palindrome from center: time *O*(*N*²), space *O*(1) | 59ms | 129ms²
+    |                                                 |        | 2) Expand palindrome from center: time *O*(*N*²), space *O*(1) | 59ms | 129ms |
 
