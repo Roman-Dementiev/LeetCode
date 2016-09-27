@@ -160,10 +160,10 @@ For each character of the string *S*[*i*] try to build palindrome around that ch
 * * *
 # Summary
 
-  N | Problem     | Difficulty | Solution                                 |  C++   |  C#    | Java
-----|-------------|-------------------------------------------------------|--------|--------|------
-1   | Two Sum     | Easy       | 1) Brute Force: *O*(N^2^)                |  486ms |  615ms |
-  . |             |            | 2) Hash Table: time *O*(N), space *O*(N) |   16ms |  412ms |
+  N | Problem     | Difficulty | Solution                                  |  C++   |  C#    | Java
+--- | ----------- | ---------- | ----------------------------------------- | ------ | ------ | -----
+1   | Two Sum     | Easy       | 1) Brute Force: *O*(N^2^)                 |  486ms |  615ms |
+  . |             |            | 2) Hash Table: time *O*(N), space *O*(N)  |   16ms |  412ms |
 
 
 
