@@ -76,7 +76,8 @@ Check all substrings.
 
 **Time complexity** : *O*(N³).
 **Space compexity**: *O*(1).
-**Execution time**: C++ 599ms, C# Time Limit Exceeded
+**Execution time**: C++ 599ms, C# Time Limit Exceeded.
+
 
 ### Solution 1: Brute Force with HashSet [Time Limit Exceeded, C++ Accepted]
 Store scanned substring characters in hash set so we can quickly check if next character is repeating.
@@ -84,7 +85,8 @@ Store scanned substring characters in hash set so we can quickly check if next c
 
 **Time complexity** : *O*(*N*²).
 **Space compexity**: *O*(k), where k is number of acceptable character.
-**Execution time**: C++ 32ms, C# Time Limit Exceeded
+**Execution time**: C++ 32ms, C# Time Limit Exceeded.
+
 
 ### Solution 2: Sliding Window [Accepted]
 Use a window of non-repeating substring [*i*, *j*] and keep indices of window's characters in hash map. First set window to [*i*=0, *j*=0]. Then for next character *s*[*j*+1] check if it is already in the window (in the hash map). If there is such character at index *prev* then remove from hash map all characters from *i* to *prev* and slide the beginning of the window: *i* = *prev* + 1. Then add new character to hash map and increase window: *j* = *j* + 1. Keep track of maximum encountered window length.
@@ -93,6 +95,7 @@ Use a window of non-repeating substring [*i*, *j*] and keep indices of window's 
 **Time complexity** : *O*(*N*).
 **Space compexity**: *O*(k), where k is number of acceptable character.
 **Execution time**: C++ 12ms, C# 119ms.
+
 
 - - -
 
@@ -118,18 +121,19 @@ The median is (2 + 3)/2 = 2.5
 We need to find element *k* = (*N1*+*N2*)/2 in merged sorted array *M*. When *N*=*N1*+*N2* is odd then median is *M*[*k*], otherwise it is (*M*[*k*] + *M*[*k-1*]) / 2.
 *Note*: No actual merging is necessary, we need just count elements as with merge sort algorithm. 
 
-**Time complexity** : *O*(min(*N1*, *N2*))
-**Space compexity**: *O*(1)
-**Execution time**: C++ 48ms, C# 196ms
+**Time complexity** : *O*(min(*N1*, *N2*)).
+**Space compexity**: *O*(1).
+**Execution time**: C++ 48ms, C# 196ms.
+
 
 ### Solution 2: Binary search for *k*-th element [Accepted]
 As above we need to find *k*-th element in the merged sequence.
 First we compare middle points *k1* = *N1*/2 and *k2* = *N2*/2. Suppose, *nums1*[*k1*] < *nums2*[*k2*]. Then if *k* < *k1*+ *k2* the *k*-th element belong to arrays *nums1*[0..N1] and *nums2*[0..k2-1]. Otherwise it is *(k-k1-1)*-th element in arrays *nums1*[k1+1..N1] and *nums2*[0..N2]. Similar formulas work for case where *nums1*[*k1*] > *nums2*[*k2*].
 Now we can do recursive binary search for selected subarrays. 
 
-**Time complexity** : *O*(log *N*)
-**Space compexity**: *O*(1)
-**Execution time**: C++ 32ms, C# 189ms
+**Time complexity** : *O*(log *N*).
+**Space compexity**: *O*(1).
+**Execution time**: C++ 32ms, C# 189ms.
 
 - - -
 ## 5. Longest Palindromic Substring (Medium)
@@ -140,7 +144,8 @@ Check all substrings.
 
 **Time complexity** : *O*(N³).
 **Space compexity**: *O*(1).
-**Execution time**: C++ 576ms, C# 372ms
+**Execution time**: C++ 576ms, C# 372ms.
+
 
 ### Solution 1: Dynamic programming [Accepted, C++ Memory Limit Exceeded]
 Build table *DP*[*N*, *N*] of boolean values where *DP*[*i*, *j*] is *true* when substring *S*[*i*..*j*] is palindromic.
@@ -149,14 +154,14 @@ Then fill table for lengths 3 to N using formula: *DP*[*i*, *j*] is *true* when 
 
 **Time complexity** : *O*(N²).
 **Space compexity**: *O*(N²).
-**Execution time**: C++ Memory Limit Exceeded, C# 239ms
+**Execution time**: C++ Memory Limit Exceeded, C# 239ms.
 
 ### Solution 2: Expand palindrome from center [Accepted]
 For each character of the string *S*[*i*] try to build palindrome around that character and around *S*[*i*..*i*+1] if *S*[*i*] = *S*[*i*+1]
 
 **Time complexity** : *O*(N²).
 **Space compexity**: *O*(1).
-**Execution time**: C++ 59ms, C# 129ms
+**Execution time**: C++ 59ms, C# 129ms.
 
 
 * * *
