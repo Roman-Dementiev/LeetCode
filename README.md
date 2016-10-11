@@ -341,15 +341,15 @@ For each character of the string *S*[*i*] try to build palindrome around that ch
   1 | Two Sum | Easy       | 1) Brute Force: *O*(*N*²) | 486ms | 615ms | 38ms |
     |         |            | 2) Hash Table: time *O*(*N*), space *O*(*N*) |   16ms |  412ms | 9ms |
   2 | Add Two Numbers | Medium | *O*(max(*N1*,*N2*))| 42ms | 185ms | 59ms |
-2.1 | Followup: Add Two Numbers Stored in Non-Reversed Order | Medium | *O*(max(*N1*,*N2*)) ||||
+2.1 | Followup: Add Two Numbers Stored in Non-Reversed Order | Medium | *O*(max(*N1*,*N2*)) |
   3 | Longest Substring Without Repeating Characters | Medium | 0) Brute Force: *O*(*N*³) |  599ms | Time Limit | 152ms |
-||| 1) Brute Force with HashSet: *O*(*N*²) | 32ms | Time Limit | 61ms |
-||| 2) Sliding Window: *O*(*N*)            | 12ms | 119ms | 53ms |
- 4 | Median of Two Sorted Arrays | Hard | 1) "Merge" method: *O*(min(*N1*, *N2*)) | 48ms | 196ms | 73ms |
-||| 2) Binary search for *k*-th element: *O*(log *N*) | 32ms | 189ms | 69 ms |
- 5 | Longest Palindromic Substring | Medium | 0) Brute Force: *O*(*N*³) | 576ms |  372ms | 176ms |
-||| 1) Dynamic programming: time *O*(*N*²), space *O*(*N*²) | Memory Limit | 239ms | 77ms |
-||| 2) Expand palindrome from center: time *O*(*N*²), space *O*(1) | 59ms | 129ms | 18ms |
+  | | | 1) Brute Force with HashSet: *O*(*N*²) | 32ms | Time Limit | 61ms |
+  | | | 2) Sliding Window: *O*(*N*)            | 12ms | 119ms | 53ms |
+  4 | Median of Two Sorted Arrays | Hard | 1) "Merge" method: *O*(min(*N1*, *N2*)) | 48ms | 196ms | 73ms |
+  | | | 2) Binary search for *k*-th element: *O*(log *N*) | 32ms | 189ms | 69 ms |
+  5 | Longest Palindromic Substring | Medium | 0) Brute Force: *O*(*N*³) | 576ms |  372ms | 176ms |
+  | | | 1) Dynamic programming: time *O*(*N*²), space *O*(*N*²) | Memory Limit | 239ms | 77ms |
+  | | | 2) Expand palindrome from center: time *O*(*N*²), space *O*(1) | 59ms | 129ms | 18ms |
 
 
 
