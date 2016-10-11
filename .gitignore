@@ -244,3 +244,8 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# Eclipse
+.metadata/
+.recommenders/
+
