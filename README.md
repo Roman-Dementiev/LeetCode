@@ -21,14 +21,14 @@ Loop through all pairs of elements and check if the sum equals *target*.
 
 **Time complexity** : *O*(*N*²).
 **Space compexity**: *O*(1)
-**Execution time**: C++  486ms, C# 615ms
+**Execution time**: C++  486ms, C# 615ms, Java 38ms.
 
 ### Solution 2: Hash Table [Accepted]
 Pass through elements of the array storing putting indices of values into hash table and checking if hash table already contains a value such that it's sum with current element equals **target**.
 
-**Time complexity** : *O*(*N*²)
+**Time complexity** : *O*(*N*)
 **Space compexity**: *O*(1)
-**Execution time**: C++  486ms, C# 615ms
+**Execution time**: C++ 486ms, C# 615ms, Java 9ms.
 
 - - -
 
@@ -46,7 +46,7 @@ Pass through list calculating sum digit by digit and keeping track of carry flag
 
  **Time complexity** :Time complexity : *O*(max(*N1*, *N2*))
 **Space compexity**: *O*(1)
-**Execution time**: C++ 42ms, C# 185ms
+**Execution time**: C++ 42ms, C# 185ms, Java 59ms.
 
 ## 2.1 Followup: Add Two Numbers Stored in Non-Reversed Order
 ### Solution
@@ -71,21 +71,21 @@ Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer 
 
 ```
 
-### Solution 0: Brute Force [Time Limit Exceeded (C++ accepted, surprisingly)]
+### Solution 0: Brute Force [Accepted, surprisingly, C# Time Limit Exceeded]
 Check all substrings.
 
 **Time complexity** : *O*(N³).
 **Space compexity**: *O*(1).
-**Execution time**: C++ 599ms, C# Time Limit Exceeded.
+**Execution time**: C++ 599ms, C# Time Limit Exceeded, Java 152ms.
 
 
-### Solution 1: Brute Force with HashSet [Time Limit Exceeded, C++ Accepted]
+### Solution 1: Brute Force with HashSet [Accepted, C# Time Limit Exceeded]
 Store scanned substring characters in hash set so we can quickly check if next character is repeating.
 *Note*: If set of characters is small (for example, letters only) we can use array of boolean instead of hash set.
 
 **Time complexity** : *O*(*N*²).
 **Space compexity**: *O*(k), where k is number of acceptable character.
-**Execution time**: C++ 32ms, C# Time Limit Exceeded.
+**Execution time**: C++ 32ms, C# Time Limit Exceeded, Java 61ms.
 
 
 ### Solution 2: Sliding Window [Accepted]
@@ -94,7 +94,7 @@ Use a window of non-repeating substring [*i*, *j*] and keep indices of window's 
 
 **Time complexity** : *O*(*N*).
 **Space compexity**: *O*(k), where k is number of acceptable character.
-**Execution time**: C++ 12ms, C# 119ms.
+**Execution time**: C++ 12ms, C# 119ms, Java 53ms.
 
 
 - - -
@@ -123,7 +123,7 @@ We need to find element *k* = (*N1*+*N2*)/2 in merged sorted array *M*. When *N*
 
 **Time complexity** : *O*(min(*N1*, *N2*)).
 **Space compexity**: *O*(1).
-**Execution time**: C++ 48ms, C# 196ms.
+**Execution time**: C++ 48ms, C# 196ms, Java 73ms.
 
 
 ### Solution 2: Binary search for *k*-th element [Accepted]
@@ -133,7 +133,7 @@ Now we can do recursive binary search for selected subarrays.
 
 **Time complexity** : *O*(log *N*).
 **Space compexity**: *O*(1).
-**Execution time**: C++ 32ms, C# 189ms.
+**Execution time**: C++ 32ms, C# 189ms, Java 69ms.
 
 - - -
 ## 5. Longest Palindromic Substring (Medium)
@@ -144,7 +144,7 @@ Check all substrings.
 
 **Time complexity** : *O*(N³).
 **Space compexity**: *O*(1).
-**Execution time**: C++ 576ms, C# 372ms.
+**Execution time**: C++ 576ms, C# 372ms, Java 176ms.
 
 
 ### Solution 1: Dynamic programming [Accepted, C++ Memory Limit Exceeded]
@@ -154,31 +154,32 @@ Then fill table for lengths 3 to N using formula: *DP*[*i*, *j*] is *true* when 
 
 **Time complexity** : *O*(N²).
 **Space compexity**: *O*(N²).
-**Execution time**: C++ Memory Limit Exceeded, C# 239ms.
+**Execution time**: C++ Memory Limit Exceeded, C# 239ms, Java 77ms.
 
 ### Solution 2: Expand palindrome from center [Accepted]
 For each character of the string *S*[*i*] try to build palindrome around that character and around *S*[*i*..*i*+1] if *S*[*i*] = *S*[*i*+1]
 
 **Time complexity** : *O*(N²).
 **Space compexity**: *O*(1).
-**Execution time**: C++ 59ms, C# 129ms.
+**Execution time**: C++ 59ms, C# 129ms, Java 18ms.
 
 
 * * *
 # Summary
 
-  N | Problem                                         | Difficulty  | Solution/Comlexyty                           |  C++   |  C#    | Java
+  N | Problem                                         | Difficulty  | Solution/Comlexyty                           |  C++   |  C#    | Java |
 --- | ----------------------------------------------- | ------ | -------------------------------------------- | ------ | ------ | -----
-  1 | Two Sum                                         | Easy   | 1) Brute Force: *O*(*N*²)                    |  486ms |  615ms |
-    |                                                 |        | 2) Hash Table: time *O*(*N*), space *O*(*N*) |   16ms |  412ms |
-  2 | Add Two Numbers                                 | Medium | *O*(max(*N1*,*N2*))                          |   42ms |  185ms |
+  1 | Two Sum                                         | Easy   | 1) Brute Force: *O*(*N*²)                    |  486ms |  615ms | 38ms |
+    |                                                 |        | 2) Hash Table: time *O*(*N*), space *O*(*N*) |   16ms |  412ms | 9ms |
+  2 | Add Two Numbers                                 | Medium | *O*(max(*N1*,*N2*))                          |   42ms |  185ms | 59ms |
 2.1 | Followup: Add Two Numbers Stored in Non-Reversed Order | Medium | *O*(max(*N1*,*N2*))                   |        |        |
-  3 | Longest Substring Without Repeating Characters  | Medium | 0) Brute Force: *O*(*N*³)                    |  599ms | Time Limit |
-    |                                                 |        | 1) Brute Force with HashSet: *O*(*N*²)       |  32 ms | Time Limit |
-    |                                                 |        | 2) Sliding Window: *O*(*N*)                  |   12ms |  119ms |
-  4 | Median of Two Sorted Arrays                     | Hard   | 1) "Merge" method: *O*(min(*N1*, *N2*))      |   48ms |  196ms |
-    |                                                 |        | 2) Binary search for *k*-th element: *O*(log *N*) |   32ms |  189ms |
-  5 | Longest Palindromic Substring                   | Medium | 0) Brute Force: *O*(*N*³)                    |  576ms |  372ms |
-    |                                                 |        | 1) Dynamic programming: time *O*(*N*²), space *O*(*N*²) | Memory Limit | 239ms |
-    |                                                 |        | 2) Expand palindrome from center: time *O*(*N*²), space *O*(1) | 59ms | 129ms |
+  3 | Longest Substring Without Repeating Characters  | Medium | 0) Brute Force: *O*(*N*³)                    |  599ms | Time Limit | 152ms
+    |                                                 |        | 1) Brute Force with HashSet: *O*(*N*²)       |  32 ms | Time Limit | 61ms |
+    |                                                 |        | 2) Sliding Window: *O*(*N*)                  |   12ms |  119ms | 53ms
+  4 | Median of Two Sorted Arrays                     | Hard   | 1) "Merge" method: *O*(min(*N1*, *N2*))      |   48ms |  196ms | 73ms |
+    |                                                 |        | 2) Binary search for *k*-th element: *O*(log *N*) |   32ms |  189ms | 69 ms |
+  5 | Longest Palindromic Substring                   | Medium | 0) Brute Force: *O*(*N*³)                    |  576ms |  372ms | 176ms |
+    |                                                 |        | 1) Dynamic programming: time *O*(*N*²), space *O*(*N*²) | Memory Limit | 239ms | 77ms |
+    |                                                 |        | 2) Expand palindrome from center: time *O*(*N*²), space *O*(1) | 59ms | 129ms | 18ms |
+
 
